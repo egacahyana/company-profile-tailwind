@@ -103,17 +103,21 @@
   </section>
   <section class="bg-[#3534d2]">
     <div class="container mx-auto">
-      <div class="flex  flex-col text-white font-montserrat pt-8 pb-8">
-        <h3 class="text-center text-2xl font-bold">Get in touch</h3>
-        <div class="pt-8">
-          <h3 class="text-center text-xl">Enter your WA number</h3>
-          <div class="flex pt-4 gap-2 items-center justify-center text-xl">
-            <div>+62</div>
-            <input type="text" class="max-w-[500px] w-full p-2  text-[#3534d2]">
-          </div>
-          <div class="mt-6 bg-white cursor-pointer mx-auto hover:bg-opacity-50 text-[#3534d2] p-4 rounded-md max-w-40 text-center font-montserrat text-2xl font-bold">
-            Submit
-          </div>
+      <form id="wa-form">
+        <div class="flex  flex-col text-white font-montserrat pt-8 pb-8">
+          <h3 class="text-center text-2xl font-bold">Get in touch</h3>
+          <div class="pt-8">
+            <h3 class="text-center text-xl">Enter your WA number</h3>
+            <div class="flex pt-4 gap-2 items-center justify-center text-xl">
+              <div>+62</div>
+              <input type="text" id="phone-number" class="max-w-[500px] w-full p-2  text-[#3534d2]">
+            </div>
+            <button
+            type="submit"
+             class="mt-6 bg-white cursor-pointer mx-auto hover:bg-opacity-50 text-[#3534d2] p-4 rounded-md max-w-40 text-center font-montserrat text-2xl font-bold">
+              Submit</button>
+            </div>
+      </form>
       </div>
     </div>
     </div>
@@ -124,6 +128,12 @@
   $("#han-navi").click(function (){
    // alert("Gobang tiktok")
    $("#menu").toggleClass("hidden")
+  })
+  $("#wa-form").submit(function(e){
+    e.preventDefault();
+    var phone =$("#phone-number").val();
+    window.location.href = "https://wa.me/62" + phone
+
   })
 </script>
 </html>
